@@ -8,6 +8,10 @@
 
 	<title> projector aspect ratio correction </title>
 
+	<style>
+		body { overflow: hidden;  }
+	</style>
+
 </head>
 <body>
 
@@ -20,40 +24,13 @@
 		<p> Have you ever been stuck using a projector that just didn't get the aspect ratio right? I have, and was extremely annoyed by it. As a response I 
 		created this project, which simply uses the <code>transform</code> CSS property to adjust your HTML page. </p>
 
-		<h2> How it works </h2>
-
-		<p> You simply need to include the JavaScript library in your HTML: </p>
-		<pre>
-	&lt;script src="parc.js"&gt;&lt;/script&gt;</pre>
-		<p> (Protip: include it at the end of your HTML body, like you're supposed to do with jQuery and other libraries.) </p>
-
-		<p> At this point, assuming there are no JavaScript errors in the console, you're good to go. Here are the keys you can hit:
-			<ul>
-				<li> Press <kbd>V</kbd> to display a square with the intention of adjusting the page's scale. At this point you should be able to use your arrow keys to adjust the vertical &amp; horizontal scale from anywhere between 0.5 and 1.0. When you're done, hit the <kbd>V</kbd> key again to turn off the square. </li>
-				<li> Press <kbd>B</kbd> to display a square with the intention of adjusting the page's offset (or translation). Again, you should be able to use your arrow keys to change the offset, and you can hide the square by hitting the <kbd>B</kbd> key again. </li>
-				<li> The code tries to do a guess as to what color (black or white) would show up properly on the screen, but if you can't see the square you can invert the color by hitting the <kbd>X</kbd> key. </li>
-			</ul>
-		</p>
-
-		<h2> Changing the default values </h2>
-
-		<p> If your HTML page is already listening for keypresses, and you've already got assignments for the above keys, you can set up some default values for the keys. Just use the following code, changing the values to something more appropriate: </p>
-		<pre>
-    &lt;script&gt;
-        window.parc = {
-            aspectKey:    'V',
-            translateKey: 'B',
-            invertKey:    'X',
-            strokeColor:  '#fff'
-        };
-    &lt;/script&gt;
-    &lt;script src="parc.js"&gt;&lt;/script&gt;</pre>
-		<p> Make sure you define the <code>parc</code> object before the script is included, so that your default values are used by the included script. </p>
-
+		<p> Note: this utility was written to work with a non-scrolling single page, so any page that has scrollbars is going to do some weird layout stuff if you try to scale it. You can also try setting the CSS overflow of your <code>&lt;body&gt;</code> to hidden, to prevent scrollbars from showing up. </p>
+		
 		<h2> Try it now </h2>
 		<p> This page includes the parc.js file from the Github repo, so you can try it now to see if it works in your current browser window. (It should if you're using a reasonably recent browser version, but if it doesn't work for you, you can always check the Github repo for updates and pull requests.) </p>
+		<p> Hit the <kbd>V</kbd> key to pop up a reference square, and then use the arrow keys to adjust the scale. When you're done, hit the <kbd>V</kbd> key again to hide the square. </p>
 
-		<h2> Disclaimer </h2>
+		<h2> Disclaimers </h2>
 		<p> This library is provided as is, and has been written to work with a pretty narrow use case. So it's highly likely that something may go wrong if you try to use this code elsewhere. Again, you can submit pull requests at the Github site. </p>
 
 		<h2> Author </h2>
