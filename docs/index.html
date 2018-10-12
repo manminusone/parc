@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<title> projector aspect ratio correction </title>
+
+</head>
+<body>
+
+	<div class="jumbotron">
+		<h1 class="display-4">parc &ndash; projector aspect ratio correction </h1>
+		<p class="lead"> This is a small piece of JavaScript code that allows you to adjust the scale and translation of your HTML page, in cases where it's being projected in an incorrect aspect ratio. </p>
+	</div>
+
+	<div class="container">
+		<p> Have you ever been stuck using a projector that just didn't get the aspect ratio right? I have, and was extremely annoyed by it. As a response I 
+		created this project, which simply uses the <code>transform</code> CSS property to adjust your HTML page. </p>
+
+		<h2> How it works </h2>
+
+		<p> You simply need to include the JavaScript library in your HTML: </p>
+		<pre>
+	&lt;script src="parc.js"&gt;&lt;/script&gt;</pre>
+		<p> (Protip: include it at the end of your HTML body, like you're supposed to do with jQuery and other libraries.) </p>
+
+		<p> At this point, assuming there are no JavaScript errors in the console, you're good to go. Here are the keys you can hit:
+			<ul>
+				<li> Press <kbd>V</kbd> to display a square with the intention of adjusting the page's scale. At this point you should be able to use your arrow keys to adjust the vertical &amp; horizontal scale from anywhere between 0.5 and 1.0. When you're done, hit the <kbd>V</kbd> key again to turn off the square. </li>
+				<li> Press <kbd>B</kbd> to display a square with the intention of adjusting the page's offset (or translation). Again, you should be able to use your arrow keys to change the offset, and you can hide the square by hitting the <kbd>B</kbd> key again. </li>
+				<li> The code tries to do a guess as to what color (black or white) would show up properly on the screen, but if you can't see the square you can invert the color by hitting the <kbd>X</kbd> key. </li>
+			</ul>
+		</p>
+
+		<h2> Changing the default values </h2>
+
+		<p> If your HTML page is already listening for keypresses, and you've already got assignments for the above keys, you can set up some default values for the keys. Just use the following code, changing the values to something more appropriate: </p>
+		<pre>
+    &lt;script&gt;
+        window.parc = {
+            aspectKey:    'V',
+            translateKey: 'B',
+            invertKey:    'X',
+            strokeColor:  '#fff'
+        };
+    &lt;/script&gt;
+    &lt;script src="parc.js"&gt;&lt;/script&gt;</pre>
+		<p> Make sure you define the <code>parc</code> object before the script is included, so that your default values are used by the included script. </p>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<script src="parc.js"></script>
+
+</body>
+</html>
