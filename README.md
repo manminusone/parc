@@ -14,7 +14,7 @@ Just include the file in your HTML page.
 Once you load up the page, assuming there are no JavaScript errors, you should be able to now adjust your window by hitting the following keys:
 
 Key | Notes
-----+------
+----|------
 V   | Hit this key to display a square in order to adjust scaling. You simply use the arrow keys to adjust your vertical/horizontal scaling until the square actually looks square. Hit the V key again to hide the square.
 B   | Hit this key to display a square in order to adjust the offset. Again, you use the arrow keys to adjust, and hit the B key again to hide the square.
 X   | If the color of the square makes it hard to see on your screen, hit the X key to flip the color between black and white.
