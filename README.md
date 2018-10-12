@@ -5,6 +5,8 @@ Projector aspect ratio correction. A small piece of JavaScript that allows you t
 
 This library is to be used in cases where you are displaying a browser window on a projector, but for whatever reason the projector isn't displaying the correct aspect ratio. Including this JavaScript file in your HTML should allow you to adjust the scale and offset (or translation) of your HTML page.
 
+**BIG DISCLAIMER:** This code was designed to work with a single-page non-scrolling Web application, so if your HTML page is scrolling, then you're going to see some weird jumping layout changes when you try to adjust the page. This may or may not be addressed in the future; until then, assume this code is specifically for use on a non-scrolling page.
+
 ## How do?
 
 Just include the file in your HTML page.
@@ -30,6 +32,7 @@ If your HTML page is already intercepting keyboard presses and the above keys ar
         };
     </script>
 ```
+
 ## Who me?
 
 This code was written by James Allenspach <james.allenspach@gmail.com> for the purpose of using the code in another HTML project: [20x2 Chicago Slideshow](https://github.com/manminusone/20x2chi-slides)
