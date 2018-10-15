@@ -37,7 +37,7 @@ If your HTML page is already intercepting keyboard presses and the above keys ar
     </script>
 ```
 
-The **strokeColor** attribute is an Array of colors to cycle through. If the value is a non-Array (i.e., a String) then that value will be the only stroke color used, and cycling won't appear to do anything.
+The **strokeColor** attribute is an Array of colors to cycle through (you can use two colors, such as black & white, or you can include a whole series of different colors). If the value is a non-Array (i.e., a String) then that value will be the only stroke color used, and the invert key won't appear to do anything.
 
 ## Who me?
 
