@@ -32,10 +32,12 @@ If your HTML page is already intercepting keyboard presses and the above keys ar
             translateKey: 'B',
             invertKey:    'X',
             resetKey:     'Home',
-            strokeColor:  '#fff'
+            strokeColor:  [ '#fff', '#000' ]
         };
     </script>
 ```
+
+The **strokeColor** attribute is an Array of colors to cycle through. If the value is a non-Array (i.e., a String) then that value will be the only stroke color used, and cycling won't appear to do anything.
 
 ## Who me?
 
