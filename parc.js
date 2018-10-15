@@ -9,7 +9,7 @@
 	window.parc.scaleY       = window.parc.scaleY || 1.0;
 	window.parc.xlateX       = window.parc.xlateX || 0;
 	window.parc.xlateY       = window.parc.xlateY || 0;
-	window.parc.strokeColor  = window.parc.strokeColor || (document.body.style.backgroundColor == "" ? "#000" : "#fff");
+	window.parc.strokeColor  = window.parc.strokeColor || [ '#000', '#fff' ];
 
 	var b = document.getElementsByTagName('body')[0];
 
@@ -22,22 +22,28 @@
 	}
 
 	function svg() {
+		var fillCol;
+		var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+
 		window.parc.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 		window.parc.txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
 		window.parc.txt.setAttribute('x', 10);
 		window.parc.txt.setAttribute('y', 250);
-		window.parc.txt.setAttribute('fill', window.parc.strokeColor);
+		if (Array.isArray(window.parc.strokeColor)) {
+			fillCol = window.parc.strokeColor[0];
+		} else
+			fillCol = window.parc.strokeColor;
+		window.parc.txt.setAttribute('fill', fillCol);
 		window.parc.txt.style.fontSize = '75px';
 		window.parc.txt.style.fontFamily = 'monospace';
 		window.parc.txt.innerHTML = (window.parc.showing == 'scale' ? window.parc.scaleX.toFixed(2) + 'x'+ window.parc.scaleY.toFixed(2) :  window.parc.xlateX + ',' + window.parc.xlateY);
 		window.parc.svg.appendChild(window.parc.txt);
 
-		var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
 		rect.setAttribute('x',0);
 		rect.setAttribute('y',0);
 		rect.setAttribute('width', 500);
 		rect.setAttribute('height', 500);
-		rect.setAttribute('stroke',window.parc.strokeColor);
+		rect.setAttribute('stroke',fillCol);
 		rect.setAttribute('stroke-width', 10);
 		rect.setAttribute('fill-opacity', 0);
 		rect.setAttribute('mix-blend-mode','');
@@ -94,9 +100,17 @@
 				} else {
 					if (window.parc.xlateX < 100) window.parc.xlateX += 5;
 				}
+			} else if (keyName == 'Home') {
+				if (window.parc.showing == 'scale') {
+					window.parc.scaleX = 1.0; window.parc.scaleY = 1.0;
+				} else {
+					window.parc.xlateX = 0; window.parc.xlateY = 0;
+				}
 			} else if (keyName.toLowerCase() == window.parc.invertKey.toLowerCase()) {
-				console.log('invert');
-				window.parc.strokeColor = (window.parc.strokeColor == '#fff' ? '#000' : '#fff');
+				if (Array.isArray(window.parc.strokeColor)) {
+					var fillCol = window.parc.strokeColor.shift();
+					window.parc.strokeColor.push(fillCol);
+				}
 				var tmp = window.parc.showing;
 				remove_svg();
 				window.parc.showing = tmp;

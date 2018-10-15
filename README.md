@@ -17,11 +17,12 @@ Just include the file in your HTML page.
 ```
 Once you load up the page, assuming there are no JavaScript errors, you should be able to now adjust your window by hitting the following keys:
 
-Key | Notes
-----|------
-V   | Hit this key to display a square in order to adjust scaling. You simply use the arrow keys to adjust your vertical/horizontal scaling until the square actually looks square. Hit the V key again to hide the square.
-B   | Hit this key to display a square in order to adjust the offset. Again, you use the arrow keys to adjust, and hit the B key again to hide the square.
-X   | If the color of the square makes it hard to see on your screen, hit the X key to flip the color between black and white.
+Key  | Notes
+-----|------
+V    | Hit this key to display a square in order to adjust scaling. You simply use the arrow keys to adjust your vertical/horizontal scaling until the square actually looks square. Hit the V key again to hide the square.
+B    | Hit this key to display a square in order to adjust the offset. Again, you use the arrow keys to adjust, and hit the B key again to hide the square.
+X    | If the color of the square makes it hard to see on your screen, hit the X key to flip the color between black and white.
+Home | Resets the currently displayed setting (sets scaling to 1x1, or sets offset to +0,+0)
 
 If your HTML page is already intercepting keyboard presses and the above keys are already mapped to other functions, you can change the default values of these keys (and the stroke color) by including the following script block before the script include line and making adjustments where needed.
 ```
