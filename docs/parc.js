@@ -4,6 +4,7 @@
 
 	window.parc.aspectKey    = window.parc.aspectKey || 'v';
 	window.parc.translateKey = window.parc.translateKey || 'b';
+	window.parc.resetKey     = window.parc.resetKey || 'Home';
 	window.parc.invertKey    = window.parc.invertKey || 'x';
 	window.parc.scaleX       = window.parc.scaleX || 1.0;
 	window.parc.scaleY       = window.parc.scaleY || 1.0;
@@ -76,31 +77,31 @@
 				remove_svg();
 			}
 		} else if (window.parc.showing) {
-			if (keyName == 'ArrowUp') {
+			if (keyName.toLowerCase() == 'ArrowUp'.toLowerCase()) {
 				if (window.parc.showing == 'scale') {
 					if (window.parc.scaleY < 1.0) window.parc.scaleY += 0.01;
 				} else {
 					if (window.parc.xlateY > 0) window.parc.xlateY -= 5;
 				}
-			} else if (keyName == 'ArrowDown') {
+			} else if (keyName.toLowerCase() == 'ArrowDown'.toLowerCase()) {
 				if (window.parc.showing == 'scale') {
 					if (window.parc.scaleY > 0.5) window.parc.scaleY -= 0.01;
 				} else {
 					if (window.parc.xlateY < 100) window.parc.xlateY += 5;
 				}
-			} else if (keyName == 'ArrowLeft') {
+			} else if (keyName.toLowerCase() == 'ArrowLeft'.toLowerCase()) {
 				if (window.parc.showing == 'scale') {
 					if (window.parc.scaleX > 0.5) window.parc.scaleX -= 0.01;
 				} else {
 					if (window.parc.xlateX > 0) window.parc.xlateX -= 5;
 				}
-			} else if (keyName == 'ArrowRight') {
+			} else if (keyName.toLowerCase() == 'ArrowRight'.toLowerCase()) {
 				if (window.parc.showing == 'scale') {
 					if (window.parc.scaleX < 1.0) window.parc.scaleX += 0.01;						
 				} else {
 					if (window.parc.xlateX < 100) window.parc.xlateX += 5;
 				}
-			} else if (keyName == 'Home') {
+			} else if (keyName.toLowerCase() == window.parc.resetKey.toLowerCase()) {
 				if (window.parc.showing == 'scale') {
 					window.parc.scaleX = 1.0; window.parc.scaleY = 1.0;
 				} else {

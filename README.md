@@ -31,6 +31,7 @@ If your HTML page is already intercepting keyboard presses and the above keys ar
             aspectKey:    'V',
             translateKey: 'B',
             invertKey:    'X',
+            resetKey:     'Home',
             strokeColor:  '#fff'
         };
     </script>
