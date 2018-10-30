@@ -1,9 +1,9 @@
 # parc
-Projector aspect ratio correction. A small piece of JavaScript that allows you to adjust your browser's aspect ratio.
+Projector aspect ratio correction. A small piece of JavaScript that allows you to adjust your page's aspect ratio.
 
 ## What this does
 
-This library is to be used in cases where you are displaying a browser window on a projector, but for whatever reason the projector isn't displaying the correct aspect ratio. Including this JavaScript file in your HTML should allow you to adjust the scale and offset (or translation) of your HTML page. 
+This library is to be used in cases where you are displaying a browser window on a projector, but for whatever reason the projector isn't displaying the correct aspect ratio. Including this JavaScript file in your HTML should allow you to adjust the scale and offset (or translation) of the body of your HTML page. 
 
 See a demo page at [the GitHub Pages site for this repo.](https://manminusone.github.io/parc/)
 
@@ -15,7 +15,7 @@ Just include the file in your HTML page.
 ```
     <script src="parc.js"></script>
 ```
-Once you load up the page, assuming there are no JavaScript errors, you should be able to now adjust your window by hitting the following keys:
+Once you load up the page, assuming there are no JavaScript errors, you should be able to now adjust the aspect ratio of your content by hitting the following keys:
 
 Key  | Notes
 -----|------
