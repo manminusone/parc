@@ -24,6 +24,8 @@ B    | Hit this key to display a square in order to adjust the offset. Again, yo
 X    | If the color of the square makes it hard to see on your screen, hit the X key to flip the color between black and white.
 Home | Resets the currently displayed setting (sets scaling to 1x1, or sets offset to +0,+0)
 
+Note that while the scaling values are limited to a range between 0.5 and 1.0, the offset is not limited, in cases where the empty space at the top and left of the projection can be filled up with your content.
+
 If your HTML page is already intercepting keyboard presses and the above keys are already mapped to other functions, you can change the default values of these keys (and the stroke color) by including the following script block before the script include line and making adjustments where needed.
 ```
     <script>
