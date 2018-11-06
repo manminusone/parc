@@ -81,25 +81,25 @@
 				if (window.parc.showing == 'scale') {
 					if (window.parc.scaleY < 1.0) window.parc.scaleY += 0.01;
 				} else {
-					if (window.parc.xlateY > 0) window.parc.xlateY -= 5;
+					window.parc.xlateY -= 5;
 				}
 			} else if (keyName.toLowerCase() == 'ArrowDown'.toLowerCase()) {
 				if (window.parc.showing == 'scale') {
 					if (window.parc.scaleY > 0.5) window.parc.scaleY -= 0.01;
 				} else {
-					if (window.parc.xlateY < 100) window.parc.xlateY += 5;
+					window.parc.xlateY += 5;
 				}
 			} else if (keyName.toLowerCase() == 'ArrowLeft'.toLowerCase()) {
 				if (window.parc.showing == 'scale') {
 					if (window.parc.scaleX > 0.5) window.parc.scaleX -= 0.01;
 				} else {
-					if (window.parc.xlateX > 0) window.parc.xlateX -= 5;
+					window.parc.xlateX -= 5;
 				}
 			} else if (keyName.toLowerCase() == 'ArrowRight'.toLowerCase()) {
 				if (window.parc.showing == 'scale') {
 					if (window.parc.scaleX < 1.0) window.parc.scaleX += 0.01;						
 				} else {
-					if (window.parc.xlateX < 100) window.parc.xlateX += 5;
+					window.parc.xlateX += 5;
 				}
 			} else if (keyName.toLowerCase() == window.parc.resetKey.toLowerCase()) {
 				if (window.parc.showing == 'scale') {
