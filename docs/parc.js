@@ -13,6 +13,10 @@
 	window.parc.strokeColor  = window.parc.strokeColor || [ '#000', '#fff' ];
 
 	var b = document.getElementsByTagName('body')[0];
+	if (! b) {
+		window.alert('document.body does not currently exist. Did you include parc.js at the end of your body element like you were supposed to?');
+		return false;
+	}
 
 	function remove_svg() {
 		if (window.parc.svg) {
